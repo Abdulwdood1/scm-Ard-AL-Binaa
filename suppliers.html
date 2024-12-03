@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers - Construction Supply Chain</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="main-nav">
+                <h1><i class="fas fa-building"></i> Construction Supply Chain</h1>
+                <ul>
+                    <li><a href="index.html">Inventory</a></li>
+                    <li><a href="suppliers.html" class="active">Suppliers</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="search-filters">
+                <div class="search-container">
+                    <input type="text" id="globalSearch" placeholder="Search across all suppliers...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filters">
+                    <select id="materialFilter">
+                        <option value="">All Materials</option>
+                        <option value="bricks">Bricks</option>
+                        <option value="cement">Cement</option>
+                        <option value="steel">Steel</option>
+                        <option value="concrete">Concrete</option>
+                    </select>
+                    <select id="availabilityFilter">
+                        <option value="">All Availability</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="on-demand">On Demand</option>
+                        <option value="made-to-order">Made to Order</option>
+                    </select>
+                    <select id="qualityFilter">
+                        <option value="">All Quality</option>
+                        <option value="premium">Premium</option>
+                        <option value="high">High</option>
+                        <option value="standard">Standard</option>
+                    </select>
+                </div>
+            </section>
+
+            <section id="suppliersList" class="suppliers-grid">
+                <!-- Suppliers will be dynamically added here -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Supplier Details Modal -->
+    <div id="supplierModal" class="modal">
+        <div class="modal-content supplier-modal">
+            <span class="close">&times;</span>
+            <div id="supplierDetails">
+                <!-- Supplier details will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data/suppliers.js"></script>
+    <script src="js/suppliers.js"></script>
+</body>
+</html>

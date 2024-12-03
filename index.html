@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory - Ard AL-Binaa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="main-nav">
+                <h1><i class="fas fa-building"></i> Ard AL-Binaa</h1>
+                <ul>
+                    <li><a href="index.html" class="active">Inventory</a></li>
+                    <li><a href="suppliers.html">Suppliers</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="resource-form">
+                <h2>Add New Resource</h2>
+                <form id="resourceForm">
+                    <div class="form-group">
+                        <label for="resourceName">Resource Name</label>
+                        <input type="text" id="resourceName" required placeholder="e.g., Bricks">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="unit">Unit</label>
+                        <select id="unit" required>
+                            <option value="pieces">Pieces</option>
+                            <option value="kg">Kilograms</option>
+                            <option value="tons">Tons</option>
+                            <option value="bags">Bags</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" required>
+                            <option value="available">Available</option>
+                            <option value="in-use">In Use</option>
+                            <option value="low">Low Stock</option>
+                            <option value="ordered">Ordered</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Add Resource</button>
+                </form>
+            </section>
+
+            <section class="resources-list">
+                <h2>Resources Inventory</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchResource" placeholder="Search resources...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="table-container">
+                    <table id="resourcesTable">
+                        <thead>
+                            <tr>
+                                <th>Resource Name</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resourcesTableBody">
+                            <!-- Resources will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for editing resources -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Resource</h2>
+            <form id="editForm">
+                <div class="form-group">
+                    <label for="editResourceName">Resource Name</label>
+                    <input type="text" id="editResourceName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editQuantity">Quantity</label>
+                    <input type="number" id="editQuantity" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="editUnit">Unit</label>
+                    <select id="editUnit" required>
+                        <option value="pieces">Pieces</option>
+                        <option value="kg">Kilograms</option>
+                        <option value="tons">Tons</option>
+                        <option value="bags">Bags</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editStatus">Status</label>
+                    <select id="editStatus" required>
+                        <option value="available">Available</option>
+                        <option value="in-use">In Use</option>
+                        <option value="low">Low Stock</option>
+                        <option value="ordered">Ordered</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Update Resource</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
